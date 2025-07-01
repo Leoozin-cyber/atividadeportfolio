@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout YouTube Simples</title>
+  <link rel="stylesheet" href="youtube/styleyoutube.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo" onclick="goHome()">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+        <rect width="24" height="24" rx="4" ry="4" fill="white"/>
+        <path d="M9 8L15 12L9 16V8Z" fill="#ff0000"/>
+      </svg>
+      YouTube
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar"/>
+      <button>🔍</button>
+    </div>
+    <button id="dark-mode-toggle" title="Alternar modo" class="dark-mode-btn">
+      <span class="dark-mode-text">Modo escuro</span> 🌙
+    </button>
+    <button class="login-btn" onclick="login()">Login</button>
+  </header>
+
+  <main>
+    <section class="video-section">
+      <iframe id="main-video" width="100%" height="405"
+        src="https://www.youtube.com/embed/OWOjRdmpM6I?enablejsapi=1"
+        title="Neymar 100+ WOW Skills"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+
+      <div class="video-info">
+        <h2 id="video-title">Neymar 100+ WOW Skills</h2>
+        <div class="video-likes">
+          👍 <span id="main-video-likes">123K</span> curtidas
+        </div>
+        <p id="video-views">2,1 mi visualizações • há 3 anos</p>
+
+        <div class="channel-subscribe-actions">
+          <div class="channel-name">
+            <strong>Canal:</strong> Futebol Arte
+          </div>
+          <button class="subscribe-btn">Inscreva-se</button>
+          <div class="video-actions">
+            <button id="like-btn">👍 Curtir</button>
+            <button id="share-btn">🔗 Compartilhar</button>
+            <button id="save-btn">💾 Salvar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="comments">
+        <div class="comments-header">
+          <h2>Comentários <span id="comments-count">(0)</span></h2>
+          <select id="comment-filter">
+            <option value="relevantes">Mais relevantes</option>
+            <option value="recentes">Mais recentes</option>
+          </select>
+        </div>
+        <div class="comment-list" id="comment-list"></div>
+        <form id="comment-form" class="comment-form">
+          <textarea id="comment-text" placeholder="Adicione um comentário..." required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-categories" id="sidebar-categories">
+        <button data-category="todos" class="active">Todos</button>
+        <button data-category="dribles">Dribles</button>
+        <button data-category="gols">Gols</button>
+        <button data-category="habilidades">Habilidades</button>
+        <button data-category="mais">Mais Populares</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="youtube/scriptyoutube.js"></script>
+  <a href="portfolio.html">⬅️ Voltar para o portfólio</a>
+</body>
+</html>
